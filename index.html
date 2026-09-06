@@ -1,4 +1,4 @@
-```JasD
+JasD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1105,7 +1105,776 @@
                 bottom: 18px;
             }
         }
+/* =====================================================
+   PREMIUM PROJECTS SECTION
+===================================================== */
 
+.projects-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Section heading */
+
+.section-heading h2 span {
+    background: linear-gradient(
+        90deg,
+        #6d5dfc,
+        #c026d3,
+        #ec4899
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Projects grid */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 55px;
+}
+
+
+/* Main card */
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-12px);
+
+    border-color: rgba(168,85,247,0.55);
+
+    box-shadow:
+        0 30px 80px rgba(120,60,255,0.25);
+}
+
+
+/* =====================================================
+   PROJECT VISUAL
+===================================================== */
+
+.project-visual {
+    position: relative;
+
+    height: 310px;
+
+    overflow: hidden;
+
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Project backgrounds */
+
+.project-one {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(168,85,247,0.55),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #09001b,
+            #24105c,
+            #6d28d9
+        );
+}
+
+
+.project-two {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(236,72,153,0.45),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #13001c,
+            #581c87,
+            #be185d
+        );
+}
+
+
+/* Glow */
+
+.project-glow {
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background: rgba(168,85,247,0.30);
+
+    filter: blur(70px);
+
+    animation: projectGlow 5s ease-in-out infinite alternate;
+}
+
+
+@keyframes projectGlow {
+
+    from {
+        transform: translate(-30px,-20px);
+    }
+
+    to {
+        transform: translate(40px,30px);
+    }
+
+}
+
+
+/* =====================================================
+   TOP INFORMATION
+===================================================== */
+
+.project-top {
+    position: absolute;
+
+    top: 22px;
+    left: 25px;
+    right: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 5;
+}
+
+
+.project-number {
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,0.75);
+}
+
+
+.live-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #fff;
+
+    background: rgba(0,0,0,0.30);
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 10px #22c55e;
+
+    animation: livePulse 1.5s infinite;
+}
+
+
+@keyframes livePulse {
+
+    0%,100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
+
+}
+
+
+/* =====================================================
+   BROWSER MOCKUP
+===================================================== */
+
+.browser-window {
+    position: relative;
+
+    width: 82%;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.45);
+
+    transform:
+        perspective(1000px)
+        rotateX(4deg)
+        rotateY(-3deg);
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.project-card:hover .browser-window {
+    transform:
+        perspective(1000px)
+        rotateX(0deg)
+        rotateY(0deg)
+        translateY(-5px);
+}
+
+
+/* Browser bar */
+
+.browser-bar {
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 10px;
+
+    background: #f3f3f3;
+}
+
+
+.browser-dots {
+    display: flex;
+    gap: 4px;
+}
+
+
+.browser-dots span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #aaa;
+}
+
+
+.browser-address {
+    flex: 1;
+
+    height: 16px;
+
+    border-radius: 20px;
+
+    background: #e3e3e3;
+
+    text-align: center;
+
+    font-size: 7px;
+
+    line-height: 16px;
+
+    color: #777;
+}
+
+
+/* Browser screen */
+
+.browser-screen {
+    height: 185px;
+
+    padding: 18px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #4c1d95,
+            #7e22ce
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.project-two .browser-screen {
+    background:
+        linear-gradient(
+            135deg,
+            #3b0764,
+            #9d174d,
+            #db2777
+        );
+}
+
+
+.browser-screen::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -60px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    filter: blur(15px);
+}
+
+
+/* Mini website */
+
+.mini-logo {
+    position: relative;
+    z-index: 2;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+.mini-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 70%;
+
+    margin-top: 25px;
+}
+
+
+.mini-content span {
+    font-size: 6px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.8;
+}
+
+
+.mini-content strong {
+    display: block;
+
+    font-size: 20px;
+
+    line-height: 1.05;
+
+    margin: 8px 0;
+}
+
+
+.mini-content small {
+    display: block;
+
+    font-size: 7px;
+
+    line-height: 1.5;
+
+    opacity: 0.8;
+}
+
+
+.mini-button {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #ec4899
+    );
+}
+
+
+/* =====================================================
+   PREVIEW LABEL
+===================================================== */
+
+.preview-label {
+    position: absolute;
+
+    bottom: 20px;
+    left: 25px;
+    right: 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(255,255,255,0.7);
+}
+
+
+/* =====================================================
+   PROJECT CONTENT
+===================================================== */
+
+.project-content {
+    padding: 30px;
+}
+
+
+.project-heading-row {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.project-category {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #a78bfa;
+}
+
+
+.project-content h3 {
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    color: #fff;
+}
+
+
+.project-arrow {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    color: #fff;
+
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.project-card:hover .project-arrow {
+    transform: rotate(45deg);
+
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #d946ef
+    );
+}
+
+
+.project-content p {
+    margin: 17px 0 22px;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   TAGS
+===================================================== */
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+
+.tag {
+    padding: 7px 11px;
+
+    border-radius: 50px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: rgba(255,255,255,0.75);
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.tag:hover {
+    transform: translateY(-2px);
+
+    background: rgba(139,92,246,0.18);
+}
+
+
+/* =====================================================
+   PROJECT BUTTON
+===================================================== */
+
+.project-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4f46e5,
+            #9333ea,
+            #db2777
+        );
+
+    box-shadow:
+        0 10px 25px rgba(124,58,237,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.project-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(168,85,247,0.40);
+}
+
+
+/* =====================================================
+   PROJECT FOOTER
+===================================================== */
+
+.projects-footer {
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 5px;
+}
+
+
+.projects-footer > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.footer-line {
+    width: 35px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.25);
+}
+
+
+.projects-footer p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,0.45);
+}
+
+
+.projects-footer a {
+    color: #a78bfa;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.projects-footer a:hover {
+    color: #e879f9;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .project-visual {
+        height: 260px;
+        padding: 18px;
+    }
+
+    .browser-window {
+        width: 92%;
+    }
+
+    .browser-screen {
+        height: 155px;
+    }
+
+    .project-content {
+        padding: 22px;
+    }
+
+    .project-content h3 {
+        font-size: 20px;
+    }
+
+    .projects-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+}
     </style>
 </head>
 
@@ -1536,125 +2305,363 @@
 
         </section>
 
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
-        <!-- =====================================================
-             PROJECTS
-        ===================================================== -->
+<section id="projects" class="projects-section">
 
-        <section id="projects">
+    <div class="container">
 
-            <div class="container">
+        <div class="section-heading">
 
-                <div class="section-heading">
+            <div class="eyebrow">
+                03 / Projects
+            </div>
 
-                    <div class="eyebrow">
-                        03 / Projects
+            <h2>
+                Selected <span>Work</span>
+            </h2>
+
+            <p>
+                A selection of completed projects showcasing
+                creativity, technical expertise, responsive design
+                and practical digital solutions.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- =================================================
+                 PROJECT ONE
+            ================================================== -->
+
+            <article class="project-card featured-project">
+
+                <div class="project-visual project-one">
+
+                    <div class="project-glow"></div>
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+                        <span class="live-badge">
+                            <span class="live-dot"></span>
+                            LIVE
+                        </span>
+
                     </div>
 
-                    <h2>
-                        Selected Work
-                    </h2>
 
-                    <p>
-                        A selection of completed projects demonstrating
-                        practical problem-solving, technology and
-                        implementation skills.
-                    </p>
+                    <!-- Browser mockup -->
+
+                    <div class="browser-window">
+
+                        <div class="browser-bar">
+
+                            <div class="browser-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="browser-address">
+                                jasd.github.io
+                            </div>
+
+                        </div>
+
+
+                        <div class="browser-screen">
+
+                            <div class="mini-logo">
+                                JasD
+                            </div>
+
+                            <div class="mini-content">
+
+                                <span>
+                                    DIGITAL SOLUTIONS
+                                </span>
+
+                                <strong>
+                                    Technology That
+                                    Works For You
+                                </strong>
+
+                                <small>
+                                    Professional digital,
+                                    IT and technology solutions.
+                                </small>
+
+                                <div class="mini-button">
+                                    Explore Services →
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-label">
+                        <span>WEB DESIGN</span>
+                        <span>2026</span>
+                    </div>
 
                 </div>
 
 
-                <div class="projects-grid">
+                <div class="project-content">
+
+                    <div class="project-heading-row">
+
+                        <div>
+
+                            <span class="project-category">
+                                DIGITAL SOLUTIONS
+                            </span>
+
+                            <h3>
+                                JasD Digital Solutions
+                            </h3>
+
+                        </div>
+
+                        <span class="project-arrow">
+                            ↗
+                        </span>
+
+                    </div>
 
 
-                  <!-- PROJECT ONE -->
+                    <p>
+                        A professional responsive digital solutions
+                        website developed to showcase web development,
+                        IT support, cybersecurity, networking and
+                        technology services.
+                    </p>
 
-<article class="project-card">
 
-    <div class="project-preview">
-        <div class="preview-content">
-            <span class="preview-label">.</span>
-            <h3>JasD Digital Solutions</h3>
-            <p>Professional digital solutions website</p>
+                    <div class="project-tags">
+
+                        <span class="tag">
+                            Web Design
+                        </span>
+
+                        <span class="tag">
+                            HTML & CSS
+                        </span>
+
+                        <span class="tag">
+                            Responsive
+                        </span>
+
+                        <span class="tag">
+                            UI/UX
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://crystal-sudo.github.io/JasD/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-button"
+                    >
+                        <span>View Live Website</span>
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT TWO
+            ================================================== -->
+
+            <article class="project-card">
+
+                <div class="project-visual project-two">
+
+                    <div class="project-glow"></div>
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+                        <span class="live-badge">
+                            <span class="live-dot"></span>
+                            LIVE
+                        </span>
+
+                    </div>
+
+
+                    <!-- Browser mockup -->
+
+                    <div class="browser-window">
+
+                        <div class="browser-bar">
+
+                            <div class="browser-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="browser-address">
+                                fredsdelicacy.netlify.app
+                            </div>
+
+                        </div>
+
+
+                        <div class="browser-screen">
+
+                            <div class="mini-logo">
+                                Fred's Delicacy
+                            </div>
+
+                            <div class="mini-content">
+
+                                <span>
+                                    FOOD & BUSINESS
+                                </span>
+
+                                <strong>
+                                    Delicious.
+                                    Fresh.
+                                    Local.
+                                </strong>
+
+                                <small>
+                                    A modern website designed
+                                    for a food business.
+                                </small>
+
+                                <div class="mini-button">
+                                    Explore Website →
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-label">
+                        <span>BUSINESS WEBSITE</span>
+                        <span>2026</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-heading-row">
+
+                        <div>
+
+                            <span class="project-category">
+                                BUSINESS WEBSITE
+                            </span>
+
+                            <h3>
+                                Fred's Delicacy
+                            </h3>
+
+                        </div>
+
+                        <span class="project-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        A modern business website designed to establish
+                        a strong online presence with a clean interface,
+                        responsive layout and engaging user experience.
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span class="tag">
+                            Web Development
+                        </span>
+
+                        <span class="tag">
+                            UI Design
+                        </span>
+
+                        <span class="tag">
+                            Responsive
+                        </span>
+
+                        <span class="tag">
+                            Netlify
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://fredsdelicacy.netlify.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-button"
+                    >
+                        <span>View Live Website</span>
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
         </div>
+
+
+        <!-- Projects footer -->
+
+        <div class="projects-footer">
+
+            <div>
+                <span class="footer-line"></span>
+
+                <p>
+                    More projects coming soon
+                </p>
+            </div>
+
+            <a href="#contact">
+                Start a Project →
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="project-content">
-
-        <h3>
-            JasD Digital Solutions
-        </h3>
-
-        <p>
-            A professional responsive website developed to showcase
-            digital, IT, cybersecurity, networking and technology
-            services.
-        </p>
-
-        <div class="project-tags">
-
-            <span class="tag">Web Design</span>
-            <span class="tag">HTML & CSS</span>
-            <span class="tag">Responsive</span>
-
-        </div>
-
-        <a
-            href="https://crystal-sudo.github.io/JasD/"
-            target="_blank"
-            rel="noopener"
-            class="project-button"
-        >
-            View Live Website →
-        </a>
-
-    </div>
-
-</article>
-
-                   <!-- PROJECT TWO -->
-
-<article class="project-card">
-
-    <div class="project-preview">
-        <div class="preview-content">
-            <span class="preview-label">.</span>
-            <h3>Completed Website</h3>
-            <p>Professional website project</p>
-        </div>
-    </div>
-
-    <div class="project-content">
-
-        <h3>
-            Completed Website
-        </h3>
-
-        <p>
-            A professionally developed website focused on modern
-            design, usability, responsiveness and performance.
-        </p>
-
-        <div class="project-tags">
-
-            <span class="tag">Web Development</span>
-            <span class="tag">UI Design</span>
-            <span class="tag">Responsive</span>
-
-        </div>
-
-        <a
-            href="https://fredsdelicacy.netlify.app"
-            target="_blank"
-            rel="noopener"
-            class="project-button"
-        >
-            View Live Website →
-        </a>
-
-    </div>
-
-</article>
+</section>
         <!-- =====================================================
              EXPERIENCE
         ===================================================== -->
